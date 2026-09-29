@@ -30,9 +30,9 @@ public class Coisa {
         System.out.println(tempoLP2.atingiuMetaTempoOnline());
         tempoLP2.adicionaTempoOnline(2);
         System.out.println(tempoLP2.atingiuMetaTempoOnline());
-        System.out.println(tempoLP2.toString());
+        System.out.println(tempoLP2);
         RegistroTempoOnline tempoP2 = new RegistroTempoOnline("P2");
-        System.out.println(tempoP2.toString());
+        System.out.println(tempoP2);
     }
     private static void controlarDisciplina() {
         Disciplina prog2 = new Disciplina("PROGRAMACAO 2");
@@ -43,19 +43,19 @@ public class Coisa {
         System.out.println(prog2.aprovado());
         prog2.cadastraNota(4, 10.0);
         System.out.println(prog2.aprovado());
-        System.out.println(prog2.toString());
+        System.out.println(prog2);
     }
     private static void registrarResumos() {
         RegistroResumos meusResumos = new RegistroResumos(100);  // 100 resumos
 
-        meusResumos.adiciona("Classes", "Classes definem um tipo e a base de código para criação de objetos.");
-        meusResumos.adiciona("Tipo", "Identifica a semântica (operações e significados) de um conjunto de dados.");
+        meusResumos.adicionaResumo("Classes", "Classes definem um tipo e a base de código para criação de objetos.");
+        meusResumos.adicionaResumo("Tipo", "Identifica a semântica (operações e significados) de um conjunto de dados.");
 
 
         String[] resumos = meusResumos.pegaResumos();
 
 
-        for (int i = 0; i < meusResumos.conta(); i++) {
+        for (int i = 0; i < meusResumos.contaResumos(); i++) {
             System.out.println(resumos[i]);
         }
 
