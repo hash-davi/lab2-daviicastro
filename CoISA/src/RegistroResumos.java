@@ -17,7 +17,9 @@ public class RegistroResumos {
             this.temas[this.iResumo] = tema;
 
             this.iResumo = (this.iResumo + 1) % this.resumos.length;
-            this.numeroDeResumos++;
+            if (this.numeroDeResumos < this.resumos.length) {
+                this.numeroDeResumos++;
+            }
         }
     }
 
@@ -34,11 +36,7 @@ public class RegistroResumos {
     }
 
     public int contaResumos() {
-        if (this.numeroDeResumos > this.resumos.length) {
-            return this.resumos.length;
-        } else {
-            return this.numeroDeResumos;
-        }
+        return this.numeroDeResumos;
     }
 
     public String[] pegaResumos() {
@@ -50,14 +48,7 @@ public class RegistroResumos {
 
         saida.append("- " + contaResumos() + " resumo(s) cadastrado(s) no sistema\n");
 
-        int ponto_de_parada = 0;
-        if (this.numeroDeResumos > this.temas.length) {
-            ponto_de_parada = this.temas.length;
-        } else {
-            ponto_de_parada = this.numeroDeResumos;
-        }
-
-        for (int i = 0; i < ponto_de_parada; i++) {
+        for (int i = 0; i < this.numeroDeResumos; i++) {
             saida.append("- " + this.temas[i] + "\n");
         }
 
