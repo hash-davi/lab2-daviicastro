@@ -41,7 +41,11 @@ public class Disciplina {
                 .append("Notas na disciplina:\n");
 
         for (int i = 0; i < 4; i++) {
-            saida.append((i + 1) + ": " + this.notas[i] + "\n");
+            saida.append((i + 1) + ": " + this.notas[i]);
+
+            if (i < 3) {
+                saida.append("\n");
+            }
         }
 
         return saida.toString();

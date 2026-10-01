@@ -24,11 +24,9 @@ public class RegistroResumos {
     }
 
     public boolean temResumo(String tema) {
-        for (String tem : this.temas) {
-            if (tem != null) {
-                if (tem.equals(tema)) {
-                    return true;
-                }
+        for (int i = 0; i < this.numeroDeResumos; i++) {
+            if (this.temas[i].equals(tema)) {
+                return true;
             }
         }
 
@@ -49,7 +47,11 @@ public class RegistroResumos {
         saida.append("- " + contaResumos() + " resumo(s) cadastrado(s) no sistema\n");
 
         for (int i = 0; i < this.numeroDeResumos; i++) {
-            saida.append("- " + this.temas[i] + "\n");
+            saida.append("- " + this.temas[i]);
+
+            if (i < this.numeroDeResumos - 1) {
+                saida.append("\n");
+            }
         }
 
         return saida.toString();
