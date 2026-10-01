@@ -5,16 +5,18 @@ public class RegistroTempoOnline {
 
     public RegistroTempoOnline(String nomeDaDisciplina) {
         this.nomeDaDisciplina = nomeDaDisciplina;
+        this.tempoOnlineUtilizado = 0;
         this.tempoOnlineEsperado = 120;
     }
 
     public RegistroTempoOnline(String nomeDaDisciplina, int tempoOnlineEsperado) {
         this.nomeDaDisciplina = nomeDaDisciplina;
+        this.tempoOnlineUtilizado = 0;
         this.tempoOnlineEsperado = tempoOnlineEsperado;
     }
 
     public void adicionaTempoOnline(int tempo) {
-        this.tempoOnlineUtilizado = tempo;
+        this.tempoOnlineUtilizado += tempo;
     }
 
     public boolean atingiuMetaTempoOnline() {

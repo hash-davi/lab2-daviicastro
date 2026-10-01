@@ -23,8 +23,10 @@ public class RegistroResumos {
 
     public boolean temResumo(String tema) {
         for (String tem : this.temas) {
-            if (tem.equals(tema)) {
-                return true;
+            if (tem != null) {
+                if (tem.equals(tema)) {
+                    return true;
+                }
             }
         }
 
@@ -46,8 +48,17 @@ public class RegistroResumos {
     public String imprimeResumos() {
         StringBuffer saida = new StringBuffer();
 
-        for (int i = 0; i < this.resumos.length; i++) {
-            saida.append("Resumo " + (i + 1) + ": " + this.resumos[i] + "\n");
+        saida.append("- " + contaResumos() + " resumo(s) cadastrado(s) no sistema\n");
+
+        int ponto_de_parada = 0;
+        if (this.numeroDeResumos > this.temas.length) {
+            ponto_de_parada = this.temas.length;
+        } else {
+            ponto_de_parada = this.numeroDeResumos;
+        }
+
+        for (int i = 0; i < ponto_de_parada; i++) {
+            saida.append("- " + this.temas[i] + "\n");
         }
 
         return saida.toString();
