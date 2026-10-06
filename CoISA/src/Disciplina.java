@@ -33,20 +33,21 @@ public class Disciplina {
 
     @Override
     public String toString() {
+        /*
+        Aqui se você seguisse a forma que eles cobraram as saídas, daria para fazer
+        de uma forma mais tranquila.
+        */
         StringBuffer saida = new StringBuffer();
 
-        saida.append("Nome da disciplina: " + this.nome + "\n")
-                .append("Horas de estudo: " + this.horasDeEstudo + "\n")
-                .append("Média na disciplina: " + calculaMedia() + "\n\n")
-                .append("Notas na disciplina:\n");
-
+        saida.append(this.nome + " " + this.horasDeEstudo + " " + calculaMedia() + " [");
         for (int i = 0; i < 4; i++) {
-            saida.append((i + 1) + ": " + this.notas[i]);
+            saida.append(this.notas[i]);
 
             if (i < 3) {
-                saida.append("\n");
+                saida.append(", ");
             }
         }
+        saida.append("]");
 
         return saida.toString();
     }

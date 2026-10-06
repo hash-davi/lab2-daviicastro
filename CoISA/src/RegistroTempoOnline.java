@@ -26,9 +26,7 @@ public class RegistroTempoOnline {
     public String toString() {
         StringBuffer saida = new StringBuffer();
 
-        saida.append("Nome da disciplina: " + this.nomeDaDisciplina + "\n")
-                .append("Tempo online utilizado: " + this.tempoOnlineUtilizado + "\n")
-                .append("Tempo online esperado: " + this.tempoOnlineEsperado);
+        saida.append(this.nomeDaDisciplina + " " + this.tempoOnlineUtilizado + "/" + this.tempoOnlineEsperado);
 
         return saida.toString();
     }
