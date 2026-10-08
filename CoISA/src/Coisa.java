@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Coisa {
     public static void main(String[] args) {
         registrarDescanso();
@@ -44,6 +46,20 @@ public class Coisa {
         prog2.cadastraNota(4, 10.0);
         System.out.println(prog2.aprovado());
         System.out.println(prog2);
+
+        /*
+         * Teste de novas funcionalidades da classe Disciplina
+         */
+//        Disciplina lp2 = new Disciplina("LABORATORIO DE PROGRAMACAO 2", 5, new int[]{1, 2, 3, 4, 5});
+//        lp2.cadastraHoras(12);
+//        lp2.cadastraNota(1, 5.0);
+//        lp2.cadastraNota(2, 6.0);
+//        lp2.cadastraNota(3, 7.0);
+//        lp2.cadastraNota(4, 8.0);
+//        lp2.cadastraNota(5, 9.0);
+//        System.out.println(lp2.aprovado());
+//        System.out.println(lp2);
+//        System.out.println(lp2.calculaMedia());
     }
     private static void registrarResumos() {
         RegistroResumos meusResumos = new RegistroResumos(100);  // 100 resumos
@@ -62,5 +78,6 @@ public class Coisa {
         System.out.println(meusResumos.imprimeResumos());
         System.out.println(meusResumos.temResumo("Classes"));
         System.out.println(meusResumos.temResumo("Objetos"));
+//        System.out.println(Arrays.toString(meusResumos.busca("um"))); Teste de nova funcionalidade para classe RegistroResumos.
     }
 }

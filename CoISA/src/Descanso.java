@@ -1,6 +1,15 @@
+/*
+ * Representação do controle de tempo de descanso
+ * no sistema.
+ *
+ * @author Davi Isidio Castro
+ */
 public class Descanso {
     private int horasDeDescanso;
     private int numerosDeSemana;
+    /*
+     * Pode ser "cansado" ou "descansado"
+     */
     private String status;
 
     public Descanso() {
